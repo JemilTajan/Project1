@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/08e140ae57.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body>
+    <div class="product-card">
+    <div class="logo-cart">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Re_Zero_kara_Hajimeru_Isekai_Seikatsu_logo.svg/800px-Re_Zero_kara_Hajimeru_Isekai_Seikatsu_logo.svg.png?20200720084643" alt="logo">
+            <i class="fa-solid fa-bag-shopping"></i>
+    </div>
+    <div class="main-images">
+        <img id="blue" class="blue active" src="https://d3nt9em9l1urz8.cloudfront.net/media/catalog/product/cache/3/image/9df78eab33525d08d6e5fb8d27136e95/i/m/img_6573.jpg" alt="blue">
+        <img id="pink" class="pink" src="https://m.media-amazon.com/images/I/51Eb5gREYDL._AC_SX569_.jpg" alt="pink">
+        <img id="yellow" class="yellow" src="https://m.media-amazon.com/images/I/516eT5aMq3L._AC_SY879_.jpg" alt="yellow">
+    </div>
+    <div class="shoe-details">
+        <span class="shoe_name">Re:ゼロから始める異世界生活: Rem Figure</span>
+        <p>From the anime series 'Re:ZERO -Starting Life in Another World-' comes a rerelease of the 1/7th scale figure of Rem, one of the maids that serves at the Roswaal mansion! </p>
+        <div class="stars">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star-half-stroke"></i>
+        </div>
+    </div>
+    <div class="color-price">
+        <div class="color-option">
+        <span class="color">Colour:</span>
+        <div class="circles">
+            <span class="circle blue active"  id="blue"></span>
+            <span class="circle pink " id="pink"></span>
+            <span class="circle yellow " id="yellow"></span>
+        </div>
+        </div>
+        <div class="price">
+        <span class="price_num">₱ 700.00</span>
+        <span class="price_letter">Seven hundred pesos only</span>
+        </div>
+    </div>
+    <div class="button">
+        <div class="button-layer"></div>
+        <button>Add To Cart</button>
+    </div>
+    </div>
+    <script>
+    let circle = document.querySelector(".color-option");
+
+    circle.addEventListener("click", (e)=>{
+        let target = e.target;
+        if(target.classList.contains("circle")){
+        circle.querySelector(".active").classList.remove("active");
+        target.classList.add("active");
+        document.querySelector(".main-images .active").classList.remove("active");
+        document.querySelector(`.main-images .${target.id}`).classList.add("active");
+        }
+    });
+    </script>
+</body>
+</html>
